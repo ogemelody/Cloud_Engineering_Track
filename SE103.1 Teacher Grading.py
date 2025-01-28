@@ -66,6 +66,12 @@ def calculate_average_grades(students):
 
 
 def calculate_failing_grades(students):
+    '''
+
+    :param students:
+    :return: the student that failed based on the number passing grade threshold of 55
+    '''
+
     GRADE = 55
     failing_students = []
     for student in students:
