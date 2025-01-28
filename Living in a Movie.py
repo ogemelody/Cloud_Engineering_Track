@@ -1,6 +1,26 @@
 # Dictionary to store the movies and the rating
 import random
 import statistics
+import matplotlib.pyplot as plt
+from colorama import Fore, Style, init
+
+# Initializes colorama for Windows compatibility
+init(autoreset=True)
+
+#Bonus
+def plot_rating_histogram(movies):
+    """
+    Function to create a histogram of movie ratings.
+    """
+    ratings = list(movies.values())
+    plt.figure(figsize=(8, 6))  # Set the figure size
+    plt.hist(ratings, bins=10, color='skyblue', edgecolor='black', alpha=0.7)
+    plt.title("Distribution of Movie Ratings", fontsize=16)
+    plt.xlabel("Ratings", fontsize=12)
+    plt.ylabel("Frequency", fontsize=12)
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.show()
+
 
 def list_movies(movies):
     '''
@@ -123,8 +143,9 @@ def main():
         "Forrest Gump": 8.8,
         "Star Wars: Episode V": 8.7
     }
+    #plot_rating_histogram(movies)
 
-    print("********** My Movies Database **********")
+    print(Fore.MAGENTA +"********** My Movies Database **********")
     while True:
         print("\nMenu: ")
         print("1. List movies")
