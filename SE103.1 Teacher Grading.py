@@ -9,7 +9,7 @@ def get_grade(subject):
                 return english_grade
             elif subject == "Math":
                 math_grade = float(input("Enter Math grade: "))
-                return math_grade  # Solved: maybe I might need a if that handles input based on subject, let's see
+                return math_grade
             break
     except ValueError:
         print("Expected a number")
@@ -17,7 +17,7 @@ def get_grade(subject):
 
 def get_student_info():
     """
-    function collects the students informations
+    function collects the students information
     (name, English and Math grade) and store the
     information in a dictionary
     """
@@ -34,16 +34,14 @@ def get_student_info():
 def print_student_info(students):
     """
     function that will print information about the students.
-  it used the dictionary comprrehension and generator expression
+  it used the dictionary comprehension and generator expression
   like next, max. To get the best grade and average grade
     """
-    # students = collection_of_students_information
-    print(students)
     for student in students:
         best_grade_key = max((key for key in student if key != 'Name'), key=student.get)
         best_grade = student[best_grade_key]
         english_grade_key = next((key for key in student if key == 'English'), None)
-        print(english_grade_key)
+        # print(english_grade_key)
         english_grade = student[english_grade_key]
         math_grade_key = next((key for key in student if key == 'Math'))
         math_grade = student[math_grade_key]
@@ -63,8 +61,7 @@ def calculate_average_grades(students):
         math.append(student["Math"])
     average_grades_per_subject_english = sum(english) / len(english)
     average_grades_per_subject_math = sum(math) / len(math)
-    overall_average_grade_across_all_subjects = (
-                                                            average_grades_per_subject_english + average_grades_per_subject_math) / 2
+    overall_average_grade_across_all_subjects = (average_grades_per_subject_english + average_grades_per_subject_math) / 2
     return average_grades_per_subject_english, average_grades_per_subject_math, overall_average_grade_across_all_subjects
 
 
@@ -85,17 +82,15 @@ def calculate_failing_grades(students):
 def main():
     collection_of_students_information = []
     number_of_students = int(input("Enter the number of students: "))
-    # english_grade = get_grade("Math")
-    # print(english_grade)
 
     # collect information for each student and appends into the list
     for i in range(number_of_students):
+        print(f"\nEnter details for student {i + 1}:")
         collection_of_students_information.append(get_student_info())
 
-    # print(collection_of_students_information)
-    # print_student_info(collection_of_students_information)
-    calculate_average_grades(collection_of_students_information)
-    # print_student_info(students)
+    print("\nStudent Information:")
+    print_student_info(collection_of_students_information)
+
     average_grades_per_subject_english, average_grades_per_subject_math, overall_average_grade_across_all_subjects = calculate_average_grades(
         collection_of_students_information)
     print("\nAverage grades per subject:")
@@ -103,7 +98,7 @@ def main():
 
     print(f"\nOverall average grade across all subjects: {overall_average_grade_across_all_subjects:.2f}")
     failing_results = calculate_failing_grades(collection_of_students_information)
-    #name, failed_subjects = calculate_failing_grades(collection_of_students_information)
+
     for name, failed_subjects in failing_results:
         print(f"{name}: {failed_subjects} failing grade(s)")
 
