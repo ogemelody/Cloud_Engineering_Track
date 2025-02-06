@@ -1,69 +1,67 @@
 import os
-import zipfile
-from rapidfuzz.process import extract
+import shutil
 from pathlib import Path
-#to  extract data from zip file
-invoice = "invoices.zip"
-extract_to = "invoices"
-#os.mkdir("invoices")
-"""
-with zipfile.ZipFile(invoice, "r") as zip_ref:
-    zip_ref.extractall(extract_to)
-    """
-invoices_path = Path("invoices/invoices")
-print(os.listdir(invoices_path))
 
 
+def extract_month(invoice_name):
+    # Extract month from the invoice name
+    try:
+        invoice_name_parts = invoice_name.split("_")
+        month = invoice_name_parts[-1].split(".")[0]  # Get month part before .pdf extension
+        return month, invoice_name
+    except Exception as e:
+        print(f"Error: {e}")
+        return None, None
 
-def extract_month(invoices_list):
-
-    for invoice in invoices_list:
-        try:
-            invoice_actual_name = invoice.split(".")
-            invoice_name = invoice_actual_name[0]
-            month_name = invoice_name.split("_")
-            month = month_name[-1]
-            return (month, invoice_name)
-        except:
-            print("Error:None")
 
 def month_folder():
+    # Create folders for each month if they don't already exist
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
               'November', 'December']
     for month in months:
-        if not os.path.exists(month):  # Check if folder already exists
+        if not os.path.exists(month):
             os.mkdir(month)
             print(f"Created folder: {month}")
         else:
             print(f"Folder already exists: {month}")
 
 
-def move_file(file, month):
-    if month:
-        # Construct full path for source and destination
-        source_path = os.path.join('/Users/melodyegwuchukwu/PycharmProjects/Cloud_Engineering_Track/invoices/invoices/', file)  # Source file path
-        destination_path = os.path.join(month,file)  # Destination folder path
-        print(destination_path)
-        try:
-            os.rename(source_path, destination_path)
-            print(f"Moved {file} to {month}")
-        except FileNotFoundError as e:
-            print(f"Error moving {file}: {e}")
-    else:
-        print(f"Skipping {file} due to extraction error.")
+def move_files():
+    # List all files in the 'invoices/invoices' folder
+    invoices_list = os.listdir('invoices/invoices')
+
+    # Loop through each file in the list
+    for file in invoices_list:
+        if file.endswith('.pdf'):  # Ensure we're only dealing with PDF files
+            month, invoice_name = extract_month(file)
+
+            if month:  # If month was successfully extracted
+                # Create the target folder if it doesn't exist
+                if not os.path.exists(month):
+                    os.makedirs(month)
+                    print(f"Created folder: {month}")
+
+                # Move the file to the corresponding month folder
+                source = os.path.join('invoices/invoices', file)
+                destination = os.path.join(month, file)
+
+                # Move the file
+                shutil.move(source, destination)
+                print(f"Moved {file} to {month}/")
+            else:
+                print(f"Skipping file {file} due to extraction error.")
 
 
 def main():
-    invoices_list = os.listdir('invoices/invoices')  # List all files in the 'invoices' folder
-      # Create month folders#
-    month = extract_month(invoices_list)[0]
-    invoices_name = extract_month(invoices_list)[1]
+    # List all files in the 'invoices/invoices' folder
+    invoices_list = os.listdir('invoices/invoices')
+    print("Invoice List: ", invoices_list)
+
+    # Create month folders
     month_folder()
-    move_file(invoices_name, month)
 
-
-            #continue# If a month was successfully extracted
-              # Move the invoice file to the corresponding month folder
+    # Move the files into the correct folders
+    move_files()
 
 
 if __name__ == '__main__':
