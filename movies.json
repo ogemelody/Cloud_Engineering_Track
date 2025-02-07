@@ -39,6 +39,26 @@
                 "Drama"
             ],
             "rating": 10
+        },
+        {
+            "id": 5,
+            "title": "Mother",
+            "year": 2025,
+            "genre": [
+                "Sci-Fi",
+                "Drama"
+            ],
+            "rating": 10
+        },
+        {
+            "id": 5,
+            "title": "Mother",
+            "year": 2024,
+            "genre": [
+                "Sci-Fi",
+                "Drama"
+            ],
+            "rating": 1
         }
     ]
 }
