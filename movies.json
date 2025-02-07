@@ -1,0 +1,44 @@
+{
+    "movies": [
+        {
+            "id": 1,
+            "title": "Inception",
+            "year": 2010,
+            "genre": [
+                "Sci-Fi",
+                "Action"
+            ],
+            "rating": 8.8
+        },
+        {
+            "id": 2,
+            "title": "The Dark Knight",
+            "year": 2008,
+            "genre": [
+                "Action",
+                "Drama"
+            ],
+            "rating": 9.0
+        },
+        {
+            "id": 3,
+            "title": "Interstellar",
+            "year": 2014,
+            "genre": [
+                "Sci-Fi",
+                "Drama"
+            ],
+            "rating": 8.6
+        },
+        {
+            "id": 4,
+            "title": "Mother",
+            "year": 2025,
+            "genre": [
+                "Sci-Fi",
+                "Drama"
+            ],
+            "rating": 10
+        }
+    ]
+}
