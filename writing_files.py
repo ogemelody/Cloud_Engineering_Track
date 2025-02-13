@@ -58,7 +58,7 @@ text_modified_2 = text_modified.replace("romeo", "jack").replace("juliet", "rose
 text_modified_3 = text_modified_2.replace("Romeo", "Jack").replace("Juliet", "Rose")
 print(text_modified_3)"""
 
-
+"""
 def replace(text):
     replacement = {
         "ROMEO": "JACK",
@@ -81,4 +81,13 @@ with open("romeoandjuliet.txt", "r") as file:
 replaced_text = replace(text) # saved file
 with open("jack_and_rose.txt", "w") as new_file:
     new_file.write(replaced_text)
+"""
 
+
+with open("grades.csv" , "r") as file:
+    grades = file.readlines()
+    print(grades)
+    for grade in grades[1:]:
+        Name, score, Grade = grade.strip().split(",")
+        new_score = int(score)
+        print(type(new_score))

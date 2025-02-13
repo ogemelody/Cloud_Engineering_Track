@@ -1,4 +1,4 @@
-import datetime
+"""import datetime
 #using datetime.time
 t= datetime.time(9,13,000)
 print(t.hour)
@@ -37,4 +37,9 @@ print(f"{hours} hours since Lee was born.")
 
 lee_birth = datetime.datetime(2001, 7, 4)
 weekday = lee_birth.strftime("%A")
-print(weekday)
+print(weekday)"""
+print(1/2+3//3+4**2)
+#print(20.12*10^8)
+print(1/1)
+z = y = x =1
+print(x,y,z, sep = "*")

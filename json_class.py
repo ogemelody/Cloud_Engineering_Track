@@ -1,6 +1,6 @@
 import json
 
-star_wars =""" 
+"""star_wars =
 {
 	"name": "Alderaan",
 	"rotation_period": "24",
@@ -24,7 +24,7 @@ star_wars ="""
 	"edited": "2014-12-20T20:58:18.420000Z",
 	"url": "https://swapi.py4e.com/api/planets/2/"
 }
-"""
+
 data = json.loads(star_wars)
 
 print(f"Planet name: {data['name']}")
@@ -34,7 +34,7 @@ print(f"Appeared in films: {len(data['films'])}")
 print("-------------\n")
 #exercise 2
 
-person_14 = """
+person_14 = 
     {
 	"name": "Han Solo",
 	"height": "180",
@@ -63,7 +63,6 @@ person_14 = """
 	"edited": "2014-12-20T21:17:50.334000Z",
 	"url": "https://swapi.py4e.com/api/people/14/"
 }
-"""
 
 person_14_details = json.loads(person_14)
 
@@ -71,3 +70,28 @@ print(f"Starship name: {person_14_details['name']}")
 print(f"Crew: {person_14_details['']} ")
 print(f"Consumables: {person_14_details['']} ")
 print(f"Appeared in films: {len(person_14_details['films'])} ")
+
+"""
+
+cars_data = """
+    [
+   {
+      "name": "Jonathan",
+      "grades": [100, 98, 33, 55]
+   },
+   {
+      "name": "Rona",
+      "grades": [99, 22]
+   },
+   {
+      "name": "Valentin",
+      "grades": [99, 99, 98, 97, 95]
+   }
+]
+""""""
+# Load JSON data from the file
+#with open("cars.json", "r") as file:
+data = json.loads(cars_data)  # Read JSON correctly
+print(data)
+"""
+
