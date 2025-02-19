@@ -1,3 +1,4 @@
+
 # Class
 """def count_character(string,char):
     if not char:
@@ -56,10 +57,5 @@ def find_min_max(nums):
 
     return minimum, maximum
 
-assert find_min_max([]) == None, "List can not be empty"
-
-print("Test passed: Empty list returns None")
-
-print(find_min_max([]))
 
 
