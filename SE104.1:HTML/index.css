@@ -1,0 +1,14 @@
+.parent_div{
+    display:flex;
+    background-color: purple;
+    height: 600px;
+    padding: 20px;
+
+}
+.child_div{
+    background-color: yellow;
+    width: 400px;
+    height: 30px;
+    margin: 10px;
+
+}
