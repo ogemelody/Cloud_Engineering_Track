@@ -1,0 +1,62 @@
+{
+    "The Shawshank Redemption": {
+        "year": 2023,
+        "ratings": 9.5
+    },
+    "Pulp Fiction": {
+        "year": 1923,
+        "ratings": 8.8
+    },
+    "The Room": {
+        "year": 1323,
+        "ratings": 3.6
+    },
+    "The Godfather": {
+        "year": 1823,
+        "ratings": 9.2
+    },
+    "The Godfather: Part II": {
+        "year": 2021,
+        "ratings": 9.0
+    },
+    "The Dark Knight": {
+        "year": 2022,
+        "ratings": 9.0
+    },
+    "12 Angry Men": {
+        "year": 2020,
+        "ratings": 8.9
+    },
+    "Everything Everywhere All At Once": {
+        "year": 1576,
+        "ratings": 8.9
+    },
+    "Forrest Gump": {
+        "year": 1807,
+        "ratings": 8.8
+    },
+    "Star Wars: Episode V": {
+        "year": 2024,
+        "ratings": 8.7
+    },
+    "sherk": {
+        "year": 2023,
+        "ratings": 2.5
+    },
+    "gift": {
+        "year": 2014,
+        "ratings": 6.9
+    },
+    "win": {
+        "year": 2013,
+        "ratings": 2.0
+    },
+    "oge": {
+        "year": 2022,
+        "ratings": 2.6
+    },
+    "wef": {
+        "year": 2023,
+        "ratings": 4.7
+    }
+}
